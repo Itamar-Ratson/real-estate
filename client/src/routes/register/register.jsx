@@ -1,13 +1,14 @@
 import './register.scss';
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useState } from 'react';
 import apiRequest from '../../lib/apiRequest';
+import { AuthContext } from '../../context/AuthContext';
 
 function Register() {
 	const [error, setError] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const navigate = useNavigate();
+	const { updateUser } = useContext(AuthContext);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -17,12 +18,18 @@ function Register() {
 		const { username, email, password } = Object.fromEntries(formData);
 
 		try {
-			const res = await apiRequest.post('/auth/register', {
+			await apiRequest.post('/auth/register', {
 				username,
 				email,
 				password,
 			});
-			navigate('/login');
+			const res = await apiRequest.post('/auth/login', {
+				username,
+				password,
+			});
+			updateUser(res.data);
+			// navigate('/login');
+			navigate('/');
 		} catch (err) {
 			console.log(err);
 			setError(err.response.data.message);
