@@ -24,13 +24,16 @@ export const getPost = async (req, res) => {
 };
 
 export const addPost = async (req, res) => {
-	const body = req.body;
+	const { postData, postDetail } = req.body;
 	const tokenUserId = req.userId;
 	try {
 		const newPost = await prisma.post.create({
 			data: {
-				...body,
+				...postData,
 				userId: tokenUserId,
+				postDetail: {
+					create: postDetail,
+				},
 			},
 		});
 		res.status(200).json(newPost);
@@ -43,7 +46,7 @@ export const addPost = async (req, res) => {
 export const updatePost = async (req, res) => {};
 
 export const deletePost = async (req, res) => {
-	const { id } = req.body;
+	const { id } = req.params;
 	const tokenUserId = req.userId;
 	try {
 		const post = await prisma.post.findUnique({
