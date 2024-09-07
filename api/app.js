@@ -16,11 +16,10 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/api/posts', postRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/test', testRoute);
-
 app.use('/api/users', usersRoute);
+app.use('/api/posts', postRoute);
 
 app.listen(8800, () => {
 	console.log('Server listening on port 8800');
