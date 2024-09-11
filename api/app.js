@@ -11,7 +11,7 @@ import messageRoute from './routes/message.route.js';
 const app = express();
 app.use(
 	cors({
-		origin: process.env.CLIENT_URL,
+		origin: 'http://92.113.26.167',
 		credentials: true,
 	})
 );
@@ -26,5 +26,5 @@ app.use('/api/chats', chatRoute);
 app.use('/api/messages', messageRoute);
 
 app.listen(8800, () => {
-	console.log(`Server listening on port 8800 from: ${process.env.CLIENT_URL}`);
+	console.log(`Server listening on port 8800`);
 });

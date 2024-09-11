@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiRequest = axios.create({
-	baseURL: 'https://estate.itamar.pro:8800/api',
+	baseURL: 'http://92.113.26.167:8800/api',
 	withCredentials: true,
 });
 
