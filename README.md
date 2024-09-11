@@ -4,4 +4,5 @@
 - Added cascade properites to referential relations in prisma schema
 - Removed "res.status(200).json({ ...post, isSaved: false });" from post.controller.js to avoid sending two statuses
 - Added disabled on click while saving a post to avoid sending multiple requests
-- Kept using to use 'own' class in chats rather than inline styles
+- Kept using 'own' class in chats rather than inline styles
+
