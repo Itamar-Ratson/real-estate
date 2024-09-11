@@ -11,7 +11,7 @@ import messageRoute from './routes/message.route.js';
 const app = express();
 app.use(
 	cors({
-		origin: 'http://92.113.26.167',
+		origin: 'https://92.113.26.167',
 		credentials: true,
 	})
 );
