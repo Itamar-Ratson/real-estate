@@ -2,7 +2,7 @@ import { Server } from 'socket.io';
 
 const io = new Server({
 	cors: {
-		origin: 'https://estate.itamar.pro',
+		origin: 'https://92.113.26.167:3000',
 	},
 });
 
