@@ -8,10 +8,21 @@ import usersRoute from './routes/user.route.js';
 import chatRoute from './routes/chat.route.js';
 import messageRoute from './routes/message.route.js';
 
+const allowedOrigins = [
+	'http://localhost:3000', // For local development
+	'https://estate.itamar.pro', // For production
+];
+
 const app = express();
 app.use(
 	cors({
-		origin: 'https://localhost:3000',
+		origin: function (origin, callback) {
+			if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+				callback(null, true);
+			} else {
+				callback(new Error('Not allowed by CORS'));
+			}
+		},
 		credentials: true,
 	})
 );
