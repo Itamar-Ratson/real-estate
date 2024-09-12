@@ -11,7 +11,7 @@ import messageRoute from './routes/message.route.js';
 const app = express();
 app.use(
 	cors({
-		origin: 'https://localhost:3000',
+		origin: '/client:3000',
 		credentials: true,
 	})
 );
