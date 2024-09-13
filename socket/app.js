@@ -39,5 +39,5 @@ io.on('connection', (socket) => {
 	});
 });
 
-io.listen('4000');
-console.log('Socket.io server is listening on port 4000');
+io.listen('4001');
+console.log('Socket.io server is listening on port 4001');
