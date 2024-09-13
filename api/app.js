@@ -10,25 +10,23 @@ import usersRoute from './routes/user.route.js';
 import chatRoute from './routes/chat.route.js';
 import messageRoute from './routes/message.route.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 // Dynamically import dotenv to handle environment variables
 (async () => {
 	const dotenv = (await import('dotenv')).default;
 	dotenv.config();
 })();
 
+const app = express();
+
+// Serve static files from the dist directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 const allowedOrigins = [
 	'http://localhost:3000', // For local development
 	'https://estate.itamar.pro', // For production
 ];
-
-const app = express();
-
-// Serve static files from the dist directory
-app.use(express.static(path.join(__dirname, '../client/dist')));
-
 app.use(
 	cors({
 		origin: function (origin, callback) {
