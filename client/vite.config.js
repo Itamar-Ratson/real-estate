@@ -10,5 +10,10 @@ export default defineConfig({
 	build: {
 		outDir: 'client/dist',
 	},
+	rollupOptions: {
+		output: {
+			assetFileNames: '[name].[ext]',
+		},
+	},
 });
 
