@@ -1,6 +1,6 @@
 import { Server } from 'socket.io';
 
-const io = new Server(4000, {
+const io = new Server({
 	cors: {
 		origin: 'https://estate.itamar.pro',
 		methods: ['GET', 'POST'],
