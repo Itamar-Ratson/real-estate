@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Serve static files from the 'dist' directory
-// app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.use('/api/auth', authRoute);
 app.use('/api/test', testRoute);
