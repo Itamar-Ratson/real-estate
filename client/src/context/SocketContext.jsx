@@ -8,7 +8,11 @@ export const SocketContextProvider = ({ children }) => {
 	const [socket, setsocket] = useState(null);
 
 	useEffect(() => {
-		setsocket(io('https://estate.itamar.pro:4000'));
+		setsocket(
+			io('https://estate.itamar.pro:4000', {
+				path: '/socket',
+			})
+		);
 	}, []);
 
 	useEffect(() => {
