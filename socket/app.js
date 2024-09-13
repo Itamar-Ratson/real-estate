@@ -1,9 +1,12 @@
 import { Server } from 'socket.io';
 
-const io = new Server({
+const io = new Server(4000, {
 	cors: {
 		origin: 'https://estate.itamar.pro',
+		methods: ['GET', 'POST'],
+		credentials: true,
 	},
+	transports: ['websocket', 'polling'],
 });
 
 let onlineUser = [];

@@ -9,7 +9,7 @@ export const SocketContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		setsocket(
-			io('https://estate.itamar.pro:4000', {
+			io('wss://estate.itamar.pro:4000', {
 				path: '/socket',
 				transports: ['websocket', 'polling'],
 			})
