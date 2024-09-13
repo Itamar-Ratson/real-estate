@@ -8,11 +8,7 @@ export const SocketContextProvider = ({ children }) => {
 	const [socket, setsocket] = useState(null);
 
 	useEffect(() => {
-		setsocket(
-			io('https://estate.itamar.pro', {
-				transports: ['websocket', 'polling'],
-			})
-		);
+		setsocket(io('https://estate.itamar.pro'));
 	}, []);
 
 	useEffect(() => {
