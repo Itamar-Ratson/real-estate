@@ -1,9 +1,9 @@
 import { Marker, Popup } from 'react-leaflet';
 import './pin.scss';
 import { Link } from 'react-router-dom';
-import icon from 'leaflet/dist/images/marker-icon.png';
-import L from 'leaflet';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import icon from 'react-leaflet/dist/images/marker-icon.png';
+import L from 'react-leaflet';
+import iconShadow from 'react-leaflet/dist/images/marker-shadow.png';
 let DefaultIcon = L.icon({
 	iconUrl: icon,
 	shadowUrl: iconShadow,
