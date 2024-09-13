@@ -11,6 +11,7 @@ export const SocketContextProvider = ({ children }) => {
 		setsocket(
 			io('https://estate.itamar.pro:4000', {
 				path: '/socket',
+				transports: ['websocket', 'polling'],
 			})
 		);
 	}, []);
