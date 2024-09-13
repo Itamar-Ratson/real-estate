@@ -20,6 +20,10 @@ const allowedOrigins = [
 ];
 
 const app = express();
+
+// Serve static files from the dist directory
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 app.use(
 	cors({
 		origin: function (origin, callback) {
