@@ -41,9 +41,9 @@ app.use('/api/chats', chatRoute);
 app.use('/api/messages', messageRoute);
 
 // Handle fallback for client-side routing
-// app.get('*', (req, res) => {
-// 	res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
-// });
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+});
 
 app.listen(8800, () => {
 	console.log(`Server listening on port 8800`);
