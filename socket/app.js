@@ -2,7 +2,7 @@ import { Server } from 'socket.io';
 
 const io = new Server({
 	cors: {
-		origin: 'https://estate.itamar.pro:3000',
+		origin: 'https://estate.itamar.pro',
 		methods: ['GET', 'POST'],
 		credentials: true,
 	},
@@ -39,5 +39,5 @@ io.on('connection', (socket) => {
 	});
 });
 
-io.listen('4001');
-console.log('Socket.io server is listening on port 4001');
+io.listen('4000');
+console.log('Socket.io server is listening on port 4000');
